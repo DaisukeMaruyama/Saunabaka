@@ -7,6 +7,7 @@ class CreateSaunas < ActiveRecord::Migration[6.1]
       t.string :prefecture
       t.string :postal_code
       t.string :address
+      t.string :image_id
       t.string :working_hours
       t.string :phone_number
       t.text :price_description

@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_05_04_094834) do
     t.string "prefecture"
     t.string "postal_code"
     t.string "address"
+    t.string "image_id"
     t.string "working_hours"
     t.string "phone_number"
     t.text "price_description"
