@@ -1,6 +1,7 @@
 class Public::SaunasController < ApplicationController
 
   def index
+    @saunas = Sauna.all
   end
 
   def show
@@ -14,5 +15,5 @@ class Public::SaunasController < ApplicationController
 
   def destroy
   end
-  
+
 end
