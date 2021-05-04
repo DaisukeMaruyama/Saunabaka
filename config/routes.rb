@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-  root to: 'homes#top'
-  get '/about' => 'homes#about'
-
     #devise関連
   devise_for :users, :controllers => {
     :registrations => 'devise/users/registrations',
@@ -16,6 +13,17 @@ Rails.application.routes.draw do
     get "login", :to => "users/sessions#new"
     get "logout", :to => "users/sessions#destroy"
     get "password", :to => "users/passwords#new"
+  end
+
+  #Top画面
+  root to: 'public/homes#top'
+  get '/about' => 'public/homes#about'
+
+  #scope module: :public doでpublicフォルダへまとめる。※URLにpublicがつくことはない
+  scope module: :public do
+  
+    resources :saunas, only: [:index, :show, :edit, :create, :destroy]
+
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

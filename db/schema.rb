@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_03_110744) do
+ActiveRecord::Schema.define(version: 2021_05_04_094834) do
+
+  create_table "saunas", force: :cascade do |t|
+    t.string "facility_name"
+    t.string "temperature"
+    t.string "water"
+    t.string "prefecture"
+    t.string "postal_code"
+    t.string "address"
+    t.string "working_hours"
+    t.string "phone_number"
+    t.text "price_description"
+    t.string "hp"
+    t.boolean "parking"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

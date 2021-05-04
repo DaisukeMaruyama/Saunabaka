@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  facility_name: MyString
+  temperature: MyString
+  water: MyString
+  prefecture: MyString
+  postal_code: MyString
+  address: MyString
+  working_hours: MyString
+  phone_number: MyString
+  pirce: MyText
+  hp: MyString
+  parking: false
+
+two:
+  facility_name: MyString
+  temperature: MyString
+  water: MyString
+  prefecture: MyString
+  postal_code: MyString
+  address: MyString
+  working_hours: MyString
+  phone_number: MyString
+  pirce: MyText
+  hp: MyString
+  parking: false
