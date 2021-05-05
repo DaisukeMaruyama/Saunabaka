@@ -1,0 +1,73 @@
+<section class="py-5 text-center saunas-index">
+	<div class="container">
+		<div class="row py-lg-5">
+			<div class="col-lg-6 col-md-8 mx-auto">
+				<h1 class="fw-light">Saunas</h1>
+				<p class="lead saunas-index-text">全国のサウナ施設がここに集結。今日明日に行きたいサウナを是非ここで見つけてください！</p>
+				<p>
+					<a href="#" class="btn btn-primary my-2">サウナを探す</a>
+					<%#<a href="#" class="btn btn-secondary my-2">عمل ثانوي</a>%>
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="album py-5 bg-light">
+	<div class="container">
+
+		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+			<% @facilities.each do |facility| %>
+			<div class="col">
+				<div class="card shadow-sm">
+					<%= attachment_image_tag facility, :image, size:"190x225", fallback: "no-image.jpeg", class:"card-img-top", format: "jpeg" %>
+					<div class="card-body">
+						<p class="card-text">ここにサウナ施設の名前が入ります!</p>
+						<p>室温:<span>90℃</span></p><p>水風呂:<span>16℃</span></p>
+						<div class="d-flex justify-content-between align-items-center">
+							<div class="btn-group">
+								<button type="button" class="btn btn-sm btn-outline-secondary">見てみる</button>
+							</div>
+							<small class="text-muted">♡9</small>
+						</div>
+					</div>
+				</div>
+			</div>
+			<% end %>
+
+			<div class="col">
+				<div class="card shadow-sm">
+					<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: ظفري" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">ظفري</text></svg>
+
+					<div class="card-body">
+						<p class="card-text">ここにサウナ施設の名前が入ります。</p>
+						<p>室温:<span>90℃</span></p><p>水風呂:<span>16℃</span></p>
+						<div class="d-flex justify-content-between align-items-center">
+							<div class="btn-group">
+								<button type="button" class="btn btn-sm btn-outline-secondary">見てみる</button>
+							</div>
+							<small class="text-muted">♡9</small>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col">
+				<div class="card shadow-sm">
+					<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: ظفري" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">ظفري</text></svg>
+
+					<div class="card-body">
+						<p class="card-text">ここにサウナ施設の名前が入ります。</p>
+						<p>室温:<span>90℃</span></p><p>水風呂:<span>16℃</span></p>
+						<div class="d-flex justify-content-between align-items-center">
+							<div class="btn-group">
+								<button type="button" class="btn btn-sm btn-outline-secondary">見てみる</button>
+							</div>
+							<small class="text-muted">♡9</small>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

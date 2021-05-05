@@ -1,0 +1,62 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap";
+
+
+ body {
+	font-family: 'Hiragino Kaku Gothic ProN W3', sans-serif;
+	display: flex; 
+  flex-flow: column; 
+  min-height: 100vh; 
+}
+
+  main {
+  flex: 1; 
+}
+
+  /* 上の設定をすることでfooterを下部へ固定 */
+
+    li {
+	list-style: none;
+}
+
+     a {
+	text-decoration: none;
+}
+
+      * {
+	margin: 0;
+	padding: 0;
+}
+
+/* devise  */
+
+.login-hedding {
+  margin-right: 52px;
+}
+
+.link-to-signup {
+  margin-left: 22px;
+}
+
+.signup-hedding {
+  margin-right: 73px;
+}
+
+.link-to-signin {
+  margin-right: 41px;
+}
