@@ -14,5 +14,4 @@ class Public::FacilitiesController < ApplicationController
 
   def edit
   end
-  
 end
