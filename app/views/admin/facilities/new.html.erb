@@ -1,0 +1,68 @@
+<div class="container">
+	<div class="row">
+		<div class="mx-auto">
+			<h3 class="mt-3 mb-3">サウナ施設登録</h3>
+
+			<%= form_with model: @facility, url: admin_facilities_path, method: :post, local:true do |f| %>
+				<table class="table table-sm table-borderless">
+					<tr>
+						<td scope="col">サウナ施設画像</td>
+						<td scope="col"><%= f.attachment_field :image %></td>
+					</tr>
+					<tr>
+						<td>サウナの名前</td>
+						<td><%= f.text_field :sauna_name %></td>
+					</tr>
+					<tr>
+						<td>郵便番号</td>
+						<td><%= f.text_field :postal_code %></td>
+					</tr>
+					<tr>
+						<td>都道府県</td>
+						<td><%= f.text_field :prefecture %></td>
+					</tr>
+					<tr>
+						<td>住所</td>
+						<td><%= f.text_field :address %></td>
+					</tr>
+					<tr>
+						<td>電話番号</td>
+						<td><%= f.text_field :phone_number %></td>
+					</tr>
+					<tr>
+						<td>サウナ室温</td>
+						<td><%= f.text_field :temperature %></td>
+					</tr>
+					<tr>
+						<td>水風呂温度</td>
+						<td><%= f.text_field :water %></td>
+					</tr>
+					<tr>
+						<td>価格</td>
+						<td><%= f.text_area :price_description %></td>
+					</tr>
+					<tr>
+						<td>営業時間</td>
+						<td><%= f.text_field :working_hours %></td>
+					</tr>
+					<tr>
+						<td>ホームページ</td>
+						<td><%= f.text_field :hp %></td>
+					</tr>
+					<tr>
+						<td>駐車場</td>
+						<td><%= f.radio_button :parking, "有" %>
+									<%= f.label :parking, "有" %>
+									<%= f.radio_button :parking, "無" %>
+									<%= f.label :parking, "無" %>
+						</td>
+					</tr>
+				</table>
+				<div class="text-center">
+					<%= f.submit %>
+				</div>
+			<% end %>
+
+		</div>
+	</div>
+</div>

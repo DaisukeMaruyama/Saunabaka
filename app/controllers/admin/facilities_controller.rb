@@ -8,6 +8,7 @@ class Admin::FacilitiesController < ApplicationController
 	end
 	
 	def new
+		@facility = Facility.new
 	end
 
 	def create
@@ -30,17 +31,17 @@ class Admin::FacilitiesController < ApplicationController
 
 	def facility_params
 		params.require(:facility).permit(
-			:sauna_name
-      :temperature
-      :water
-      :prefecture
-      :postal_code
-      :address
-      :image_id
-      :working_hours
-      :phone_number
-      :price_description
-      :hp
+			:image,
+			:sauna_name,
+      :temperature,
+      :water,
+      :prefecture,
+      :postal_code,
+      :address,
+      :working_hours,
+      :phone_number,
+      :price_description,
+      :hp,
       :parking
 		)
 	end
