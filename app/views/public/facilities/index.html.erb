@@ -22,8 +22,8 @@
 				<div class="card shadow-sm">
 					<%= attachment_image_tag facility, :image, size:"190x225", fallback: "no-image.jpeg", class:"card-img-top", format: "jpeg" %>
 					<div class="card-body">
-						<p class="card-text">ここにサウナ施設の名前が入ります!</p>
-						<p>室温:<span>90℃</span></p><p>水風呂:<span>16℃</span></p>
+						<p class="card-text"><%= facility.sauna_name %></p>
+						<p>室温:<span><%= facility.temperature %>℃</span></p><p>水風呂:<span><%= facility.water %>℃</span></p>
 						<div class="d-flex justify-content-between align-items-center">
 							<div class="btn-group">
 								<button type="button" class="btn btn-sm btn-outline-secondary">見てみる</button>
@@ -35,39 +35,8 @@
 			</div>
 			<% end %>
 
-			<div class="col">
-				<div class="card shadow-sm">
-					<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: ظفري" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">ظفري</text></svg>
-
-					<div class="card-body">
-						<p class="card-text">ここにサウナ施設の名前が入ります。</p>
-						<p>室温:<span>90℃</span></p><p>水風呂:<span>16℃</span></p>
-						<div class="d-flex justify-content-between align-items-center">
-							<div class="btn-group">
-								<button type="button" class="btn btn-sm btn-outline-secondary">見てみる</button>
-							</div>
-							<small class="text-muted">♡9</small>
-						</div>
-					</div>
-				</div>
-			</div>
 			
-			<div class="col">
-				<div class="card shadow-sm">
-					<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: ظفري" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">ظفري</text></svg>
 
-					<div class="card-body">
-						<p class="card-text">ここにサウナ施設の名前が入ります。</p>
-						<p>室温:<span>90℃</span></p><p>水風呂:<span>16℃</span></p>
-						<div class="d-flex justify-content-between align-items-center">
-							<div class="btn-group">
-								<button type="button" class="btn btn-sm btn-outline-secondary">見てみる</button>
-							</div>
-							<small class="text-muted">♡9</small>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
 </div>

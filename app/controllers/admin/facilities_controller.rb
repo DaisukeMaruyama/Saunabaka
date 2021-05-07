@@ -5,6 +5,7 @@ class Admin::FacilitiesController < ApplicationController
   end
 
 	def show
+		@facility = Facility.find(params[:id])
 	end
 	
 	def new
