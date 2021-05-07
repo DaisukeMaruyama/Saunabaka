@@ -3,7 +3,8 @@ class Public::FacilitiesController < ApplicationController
     @facilities = Facility.all
   end
 
-	def show
+  def show
+    @facility = Facility.find(params[:id])
 	end
 	
   def new

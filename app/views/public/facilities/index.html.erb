@@ -26,7 +26,7 @@
 						<p>室温:<span><%= facility.temperature %>℃</span></p><p>水風呂:<span><%= facility.water %>℃</span></p>
 						<div class="d-flex justify-content-between align-items-center">
 							<div class="btn-group">
-								<button type="button" class="btn btn-sm btn-outline-secondary">見てみる</button>
+								<button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to '見てみる' , facility_path(facility) %></button>
 							</div>
 							<small class="text-muted">♡9</small>
 						</div>

@@ -1,2 +1,56 @@
-<h1>Facilities#show</h1>
-<p>Find me in app/views/facilities/show.html.erb</p>
+<table class="table table-sm table-borderless">
+	<tr>
+		<td scope="col">サウナ施設画像</td>
+		<td scope="col"><%= attachment_image_tag @facility, :image, size:"190x225", fallback: "no-image.jpeg", class:"card-img-top", format: "jpeg" %></td>
+	</tr>
+	<tr>
+		<td>サウナの名前</td>
+		<td><%= @facility.sauna_name %></td>
+	</tr>
+	<tr>
+		<td>郵便番号</td>
+		<td><%= @facility.postal_code %></td>
+	</tr>
+	<tr>
+		<td>都道府県</td>
+		<td><%= @facility.prefecture %></td>
+	</tr>
+	<tr>
+		<td>住所</td>
+		<td><%= @facility.address %></td>
+	</tr>
+	<tr>
+		<td>電話番号</td>
+		<td><%= @facility.phone_number %></td>
+	</tr>
+	<tr>
+		<td>サウナ室温</td>
+		<td><%= @facility.temperature %>℃</td>
+	</tr>
+	<tr>
+		<td>水風呂温度</td>
+		<td><%= @facility.water %>℃</td>
+	</tr>
+	<tr>
+		<td>価格</td>
+		<td><%= @facility.price_description %></td>
+	</tr>
+	<tr>
+		<td>営業時間</td>
+		<td><%= @facility.working_hours %></td>
+	</tr>
+	<tr>
+		<td>ホームページ</td>
+		<td><%= @facility.hp %></td>
+	</tr>
+	<tr>
+		<td>駐車場</td>
+		<td>
+			<% if @facility.parking == "有" %>
+			有
+			<% else %>
+			無
+			<% end %>
+		</td>
+	</tr>
+</table>
