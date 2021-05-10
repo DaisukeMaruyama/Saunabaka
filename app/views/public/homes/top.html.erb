@@ -8,8 +8,9 @@
     <div class="container marketing">
       <div class="row text-center">
       
-        <% @facilities.each do |facility| %>	
+        <% @facilities.each.with_index(1) do |facility, i| %>	
           <div class="col-lg-4">	
+            <p><%= i %>位</p><!--- ゆくゆくランキングを表示させるため -->
             <%= attachment_image_tag facility, :image, size:"200x200", fallback: "no-image.jpeg", class:"top-saunas-pic", format: "jpeg"%>
             <h2><%= facility.sauna_name %></h2>
             <p>サウナ室 <%= facility.temperature %>℃</p>
