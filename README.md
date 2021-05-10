@@ -1,24 +1,23 @@
-# README
+# さうなbaka
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### サイト概要
+近年、昔はおじさんだけが行く場所と言われていたサウナの人気がどんどん上昇している。今では若い人からご年配の方まで男女問わず足を運ぶようになった。このサイトはサウナ初心者から上級者まで様々な方が交流やサウナの情報交換ができる様なサイトになります。
 
-Things you may want to cover:
+### サイトテーマ
+サウナ交流サイト。
 
-* Ruby version
 
-* System dependencies
+### テーマを選んだ理由
+私はサウナジャンキーと呼ばれる程サウナを愛しています。サウナを好きになったのはまだ１２歳の頃、まだまだ今の様なサウナ人気がなかった頃でした。今ではみんなに愛される場所になっており、すごく嬉しいです。そんなサウナラバーの方々の為の、Webサイトはまだそこまで多くはありません。このサイトがサウナを探す人や気軽に情報交換ができる様な場所になればと思っています。
 
-* Configuration
+### ターゲットユーザ
+全国のサウナー。
 
-* Database creation
+### 主な利用シーン
+手軽にサウナ検索やサウナ好きとの交流を楽しむ。
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 開発環境
+- エディタ:Vscode
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
