@@ -1,6 +1,7 @@
 class Public::FacilitiesController < ApplicationController
   def index
-    @facilities = Facility.all
+    @q = Facility.ransack(params[:q])
+    @facilities = @q.result(distinct: :true)
   end
 
   def show
