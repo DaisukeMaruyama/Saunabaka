@@ -30,15 +30,15 @@
 
   /* 上の設定をすることでfooterを下部へ固定 */
 
-    li {
+ li {
 	list-style: none;
 }
 
-     a {
+a {
 	text-decoration: none;
 }
 
-      * {
+* {
 	margin: 0;
 	padding: 0;
 }
@@ -47,6 +47,10 @@
 
 .login-hedding {
   margin-right: 52px;
+}
+
+.login-signin-head {
+  margin-left: 22px;
 }
 
 .link-to-signup {

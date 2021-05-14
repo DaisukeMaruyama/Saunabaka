@@ -12,10 +12,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">  
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%#= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body>
+  <body>   
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">さうなBaka</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,7 +47,7 @@
             </li>
           <% else %>
             <li class="nav-item">
-              <a class="nav-link" href="/users/sign_in">ログイン/新規会員登録</a>
+              <a class="nav-link" data-toggle="modal" data-target="#exampleModalRight" href="/users/sign_in">ログイン/新規会員登録</a>
             </li>
           <% end %>
         </ul>
@@ -57,6 +57,27 @@
         </form>
       </div>
     </nav>
+
+      <!-- ログイン新規登録Modal -->
+      <div class="modal fade drawer right-align" id="exampleModalRight" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">お帰りなさいませ！</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <%= render partial: 'devise/users/sessions/new' %>
+              <span class="justify-content-center d-flex mt-3">------------------------------------------------------------</span>
+              <%= render partial: 'devise/users/registrations/new' %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ログイン新規登録Modal -->  
+
     <main>
       <% if flash[:notice] %>
         <div class="flash">
