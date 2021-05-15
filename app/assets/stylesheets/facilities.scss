@@ -30,12 +30,12 @@
   border-bottom: 1px solid rgb(218, 214, 214);
 }
 
+// レスポンシブ //
 @media (max-width: 650px) {
   
 .show-table td{
     display: block;
   }
-
 .item {
   background-color: rgb(221, 215, 215);
 }  
