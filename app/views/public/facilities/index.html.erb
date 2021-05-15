@@ -8,13 +8,24 @@
           <a href="#" class="btn btn-primary my-2">サウナを探す</a>
           <a href="facilities/new" class="btn btn-success my-2">サウナを追加</a>
         <%= search_form_for @q do |f| %>
-          <%= f.label :sauna_name , "施設名" %>
-          <%= f.search_field :sauna_name_cont %><br>
-          <%= f.label :temperature, "サウナ室温" %>
-          <%= f.search_field :temperature_gteq, placeholder:"何℃"  %>〜<%= f.search_field :temperature_lteq, placeholder:"何℃" %><br>
-          <%= f.label :water, "水風呂" %>
-          <%= f.search_field :water_gteq, placeholder:"何℃"  %>〜<%= f.search_field :water_lteq, placeholder:"何℃" %>
-          <%= f.submit "検索" %>
+          <table class="text-left table table-borderless">
+            <tr>
+              <td><%= f.label :sauna_name , "施設名" %></td>
+              <td><%= f.search_field :sauna_name_cont %></td>
+            </tr>
+            <tr>
+              <td><%= f.label :temperature, "サウナ室温" %></td>
+              <td><%= f.search_field :temperature_gteq, placeholder:"何℃"  %>〜<%= f.search_field :temperature_lteq, placeholder:"何℃" %></td>
+            </tr>
+            <tr>
+              <td><%= f.label :water, "水風呂" %></td>
+              <td><%= f.search_field :water_gteq, placeholder:"何℃"  %>〜<%= f.search_field :water_lteq, placeholder:"何℃" %></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><%= f.submit "検索" %></td>
+            </tr>
+          </table>
         <% end %>
         </p>
       </div>
