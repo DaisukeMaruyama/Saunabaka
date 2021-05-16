@@ -14,6 +14,14 @@
                 <td><%= f.search_field :sauna_name_cont %></td>
               </tr>
               <tr>
+                <td><%= f.label :prefecture, "都道府県" %></td>
+                <td><%= f.search_field :prefecture_cont %></td>
+              </tr>
+              <tr>
+                <td><%= f.label :address, "住所" %></td>
+                <td><%= f.search_field :address_cont %></td>
+              </tr>
+              <tr>
                 <td><%= f.label :temperature, "サウナ室温" %></td>
                 <td><%= f.search_field :temperature_gteq, placeholder:"何℃"  %>〜<%= f.search_field :temperature_lteq, placeholder:"何℃" %></td>
               </tr>
