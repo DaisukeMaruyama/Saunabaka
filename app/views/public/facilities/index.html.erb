@@ -5,10 +5,10 @@
         <h1 class="fw-light">Saunas</h1>
         <p class="lead saunas-index-text">全国のサウナ施設がここに集結。今日明日に行きたいサウナを是非ここで見つけてください！</p>
         <p>
-          <a href="#" class="btn btn-primary my-2">サウナを探す</a>
+          <a href="#" class="btn btn-primary my-2" id="making-search">サウナを探す</a>
           <a href="facilities/new" class="btn btn-success my-2">サウナを追加</a>
           <%= search_form_for @q do |f| %>
-            <table class="text-left table table-borderless">
+            <table class="text-left table table-borderless search-table">
               <tr>
                 <td><%= f.label :sauna_name , "施設名" %></td>
                 <td><%= f.search_field :sauna_name_cont %></td>
