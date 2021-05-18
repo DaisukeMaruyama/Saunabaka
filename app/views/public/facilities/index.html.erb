@@ -5,8 +5,8 @@
         <h1 class="fw-light">Saunas</h1>
         <p class="lead saunas-index-text">全国のサウナ施設がここに集結。今日明日に行きたいサウナを是非ここで見つけてください！</p>
         <p>
-          <a href="#" class="btn btn-primary my-2" id="making-search">サウナを探す</a>
-          <a href="facilities/new" class="btn btn-success my-2">サウナを追加</a>
+          <span class="index-span">※『新しいサウナを登録』より施設情報登録にご協力ください。</span>
+  
           <%= search_form_for @q do |f| %>
             <table class="text-left table table-borderless search-table">
               <tr>
@@ -43,6 +43,10 @@
 
 <div class="album py-5 bg-light">
   <div class="container">
+
+    <div class="d-flex justify-content-end">
+      <%= link_to '新しいサウナを登録', "facilities/new", class:"btn btn-success" %>
+    </div>
     <p><%= @facilities.count %>件表示</p>
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -63,7 +67,7 @@
           </div>
         </div>
       <% end %>
-      
+
     </div>
   </div>
 </div>
