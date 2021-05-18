@@ -24,6 +24,7 @@ Rails.application.routes.draw do
       
       resources :facilities, only: [:index, :show, :edit, :new, :create, :destroy]
     
+      resources :forums, only: [:index, :show, :edit, :new, :create, :destroy]
     end
     
     namespace :admin do
