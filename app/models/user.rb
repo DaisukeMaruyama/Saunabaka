@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :forums, dependent: :destroy
+  has_many :topics, dependent: :destroy
   
 end
