@@ -1,7 +1,14 @@
-<% @forums.each do |forum| %>
-<%= forum.user.name %>
-<%= attachment_image_tag forum, :forum_image, size:"200x200", fallback: "no-image.jpeg", class:"top-saunas-pic", format: "jpeg"%>
-<%= forum.message %>
-<%= forum.created_at.to_s(:datetime_jp)  %>
-<% end %>
-
+<div class="container">
+	<div class="row">
+		<% @forums.each do |forum| %>
+			<div class="message-box col-12">
+				<%= attachment_image_tag forum, :forum_image, size:"200x200", fallback: "no-image.jpeg", class:"top-saunas-pic mt-1", format: "jpeg"%>
+				<p class="text-left"><%= forum.user.name %></p>
+				<div class="message-section">
+					<%= forum.message %>
+				</div>
+				<p class="text-right mt-1"><%= forum.created_at.to_s(:datetime_jp)  %></p>
+			</div>
+		<% end %>
+	</div>
+</div>

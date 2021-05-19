@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_18_082848) do
+ActiveRecord::Schema.define(version: 2021_05_19_235450) do
 
   create_table "facilities", force: :cascade do |t|
     t.string "sauna_name"
@@ -31,8 +31,17 @@ ActiveRecord::Schema.define(version: 2021_05_18_082848) do
 
   create_table "forums", force: :cascade do |t|
     t.text "message"
+    t.integer "topic_id"
     t.integer "user_id"
     t.string "forum_image_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "topics", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "forum_id"
+    t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
