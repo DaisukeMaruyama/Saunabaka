@@ -1,4 +1,5 @@
 <% @forums.each do |forum| %>
 <%= attachment_image_tag forum, :forum_image, size:"200x200", fallback: "no-image.jpeg", class:"top-saunas-pic", format: "jpeg"%>
 <%= forum.message %>
+<%= forum.created_at.to_s(:datetime_jp)  %>
 <% end %>
