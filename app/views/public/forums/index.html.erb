@@ -1,2 +1,4 @@
-<h1>Forums#index</h1>
-<p>Find me in app/views/forums/index.html.erb</p>
+<% @forums.each do |forum| %>
+<%= attachment_image_tag forum, :forum_image, size:"200x200", fallback: "no-image.jpeg", class:"top-saunas-pic", format: "jpeg"%>
+<%= forum.message %>
+<% end %>

@@ -1,0 +1,5 @@
+<%= form_with model: @forum, user: forums_path, method: :post ,local:true do |f| %>
+<%= f.text_area :message %>
+<%= f.attachment_field :forum_image %>
+<%= f.submit "投稿" %>
+<% end %>
