@@ -1,7 +1,9 @@
 class Public::TopicsController < ApplicationController
   
   def index
-    @topics = Topic.all
+    @topics = Topic.all.order(created_at: :desc
+    )
+    @topic = Topic.new
   end
 
   def show
@@ -9,7 +11,7 @@ class Public::TopicsController < ApplicationController
   end
 
   def create
-    @topic = Topic.new(topic_params)
+    @topic = Topic.create(topic_params)
     @topic.user_id = current_user.id
     if @topic.save
       flash[:notice] = "新規トピックを作成しました。"
