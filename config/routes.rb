@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'topics/index'
-  get 'topics/show'
-  get 'topics/create'
-  get 'topics/destroy'
-  get 'topics/edit'
   #devise関連
     devise_for :users, :controllers => {
       :registrations => 'devise/users/registrations',
@@ -30,6 +25,8 @@ Rails.application.routes.draw do
       resources :facilities, only: [:index, :show, :edit, :new, :create, :destroy]
     
       resources :forums, only: [:index, :show, :edit, :new, :create, :destroy]
+
+      resources :topics, only: [:index, :show, :edit, :new, :create, :destroy]
     end
     
     namespace :admin do
