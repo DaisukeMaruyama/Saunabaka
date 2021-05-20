@@ -1,15 +1,31 @@
-<%= form_with model: @topic, user: forums_path, method: :post ,local:true do |f| %>
-  <%= f.text_field :title %>
-  <%= f.submit "投稿" %>
-<% end %>
-
 <div class="container">
   <div class="row">
+    <div class="topic-form text-center mx-auto mt-4">
+      <h1 class="topic-heading">雑談掲示板</h1>
+      <h5 class="topic-heading-text">サウナの事でもそれ以外の事でも、皆様の交流掲示板として使ってください。</h5>
+      <span>※誹謗中傷禁止　他人の迷惑になる様な投稿はおやめください。</span>
+      <table class="table table-borderless">
+        <%= form_with model: @topic, user: forums_path, method: :post ,local:true do |f| %>
+        <tr>
+          <td class="text-right"><%= f.text_field :title %></td>
+          <td class="text-left"><%= f.submit "新規トピックを作成" %></td>
+        </tr>
+        <% end %>
+        <%= search_form_for @q do |f| %>
+        <tr>
+          <td class="text-right"><%= f.search_field :title_cont %></td>
+          <td class="text-left"><%= f.submit "トピックを検索" %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+
     <% @topics.each do |topic| %>
       <div class="message-box col-12">
         <%= topic.title %>
         <p class="text-right mt-1"><%= topic.created_at.to_s(:datetime_jp)  %></p>
       </div>
     <% end %>
+
   </div>
 </div>

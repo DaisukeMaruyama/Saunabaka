@@ -1,8 +1,8 @@
 class Public::TopicsController < ApplicationController
   
   def index
-    @topics = Topic.all.order(created_at: :desc
-    )
+    @q = Topic.ransack(params[:q])
+    @topics = @q.result(distinct: :true).order(created_at: :desc)
     @topic = Topic.new
   end
 
