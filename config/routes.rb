@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  get 'topics/index'
+  get 'topics/show'
+  get 'topics/create'
+  get 'topics/destroy'
+  get 'topics/edit'
   #devise関連
     devise_for :users, :controllers => {
       :registrations => 'devise/users/registrations',
