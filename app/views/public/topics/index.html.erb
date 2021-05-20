@@ -1,15 +1,15 @@
 <%= form_with model: @topic, user: forums_path, method: :post ,local:true do |f| %>
-<%= f.text_field :title %>
-<%= f.submit "投稿" %>
+  <%= f.text_field :title %>
+  <%= f.submit "投稿" %>
 <% end %>
 
 <div class="container">
-	<div class="row">
-		<% @topics.each do |topic| %>
-			<div class="message-box col-12">
-				<%= topic.title %>
-				<p class="text-right mt-1"><%= topic.created_at.to_s(:datetime_jp)  %></p>
-			</div>
-		<% end %>
-	</div>
+  <div class="row">
+    <% @topics.each do |topic| %>
+      <div class="message-box col-12">
+        <%= topic.title %>
+        <p class="text-right mt-1"><%= topic.created_at.to_s(:datetime_jp)  %></p>
+      </div>
+    <% end %>
+  </div>
 </div>
