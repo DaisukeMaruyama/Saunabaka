@@ -9,14 +9,14 @@ class Public::ForumsController < ApplicationController
   end
 
   def create
-    @forum = Forum.create(forum_params)
+    @forum = Forum.new(forum_params)
     @forum.user_id = current_user.id
     if @forum.save
-      flash[:notice] = "投稿が完了しました。"
-      redirect_to forums_path
+      flash[:notice] = "新規投稿しました。"
+      redirect_to topic_path(params[:forum]['topic_id'])
     else
-      render :new
-    end   
+      render :back
+    end
   end
 
   def show
@@ -31,7 +31,7 @@ class Public::ForumsController < ApplicationController
   private
 
   def forum_params
-    params.require(:forum).permit(:message, :forum_image)
+    params.require(:forum).permit(:message, :forum_image, :topic_id)
   end
 
 end
