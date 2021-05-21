@@ -22,7 +22,7 @@
 
     <% @topics.each do |topic| %>
       <div class="message-box col-12">
-        <%= topic.title %>
+        <%= link_to 'topic.title' , topic_path(topic) %>
         <p class="text-right mt-1"><%= topic.created_at.to_s(:datetime_jp)  %></p>
       </div>
     <% end %>

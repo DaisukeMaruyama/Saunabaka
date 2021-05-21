@@ -7,7 +7,8 @@ class Public::TopicsController < ApplicationController
   end
 
   def show
-    @topic = @topic.find(params[:id])
+    @topic = Topic.find(params[:id])
+    @forums = Forum.where(topic_id: params[:id])
   end
 
   def create
