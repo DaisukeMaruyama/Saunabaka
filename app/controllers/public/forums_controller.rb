@@ -15,7 +15,7 @@ class Public::ForumsController < ApplicationController
       flash[:notice] = "新規投稿しました。"
       redirect_to topic_path(params[:forum]['topic_id'])
     else
-      render :back
+      redirect_back(fallback_location: topic_path)
     end
   end
 
@@ -26,6 +26,13 @@ class Public::ForumsController < ApplicationController
   end
 
   def destroy
+    @forum = Forum.find(params[:id])
+    if @forum.destroy
+      flash[:notice] = "投稿を削除しました。"
+      redirect_back(fallback_location: topic_path)
+    else
+      redirect_back(fallback_location: topic_path)
+    end
   end
 
   private
