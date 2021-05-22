@@ -18,6 +18,8 @@
       <% end %>
     </div>
 
+    <p class="col-12">トピック:<%= @topics.count %>件表示</p>
+
     <% @topics.each do |topic| %>
       <div class="message-box col-12">
         <%= link_to topic_path(topic) , class:"topics-title" do %>
