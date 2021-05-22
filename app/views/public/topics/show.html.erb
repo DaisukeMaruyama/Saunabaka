@@ -1,23 +1,26 @@
-<h3>新規書き込み</h3>
-<%= form_with model: @forum, url: forums_path, method: :post ,local:true do |f| %>
-  <p>本文</p>
-  <p><%= f.text_area :message %></p>
-  <%= f.hidden_field :topic_id %>
-  <%= f.submit %>
-<% end %>
-
 <div class="container">
 	<div class="row">
-		<h1><%= @topic.title %></h1>
+		<h1 class="mt-5 mb-3"><%= @topic.title %></h1>
 		<% @forums.each_with_index do |forum , idx| %>
 			<div class="message-box col-12">
 				<p class="text-left"><%= idx + 1 %>. <%= forum.user.name %> </p>
 				<div class="message-section">
-					内容: <%= forum.message %>
+				  <%= simple_format(forum.message, sanitize: true)%>
 				</div>
 				<p class="text-right mt-1"><%= link_to '削除', forum_path(forum.id), method: :delete, class:"btn-sm forum-delete-button btn-danger" %> | <%= forum.created_at.to_s(:datetime_jp)  %></p>
 			</div>
 		<% end %>
+
+		<div class="col-12 mt-4">
+			<h3>新規書き込み</h3>
+			<%= form_with model: @forum, url: forums_path, method: :post ,local:true do |f| %>
+				<span>本文</span>
+				<p><%= f.text_area :message, class:"topic-show-textarea" %></p>
+				<%= f.hidden_field :topic_id %>
+				<%= f.submit '書き込む', class:'mb-4' %>
+			<% end %>
+		</div>
+
 	</div>
 </div>
 
