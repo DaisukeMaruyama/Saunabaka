@@ -1,6 +1,7 @@
 <div class="container">
 	<div class="row">
-		<h1 class="mt-5 mb-3"><%= @topic.title %></h1>
+		<h1 class="mt-5 mb-3 col-12 text-center"><%= @topic.title %></h1>
+		<p class="col-12"><%= @forums.count %>件表示 </p>
 		<% @forums.each_with_index do |forum , idx| %>
 			<div class="message-box col-12">
 				<p class="text-left"><%= idx + 1 %>. <%= forum.user.name %> </p>
