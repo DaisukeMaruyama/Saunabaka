@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'recommendations/index'
-  get 'recommendations/show'
-  get 'recommendations/new'
-  get 'recommendations/create'
-  get 'recommendations/edit'
-  get 'recommendations/destroy'
   #devise関連
     devise_for :users, :controllers => {
       :registrations => 'devise/users/registrations',
@@ -33,6 +27,8 @@ Rails.application.routes.draw do
       resources :forums, only: [:index, :show, :edit, :new, :create, :destroy]
 
       resources :topics, only: [:index, :show, :edit, :new, :create, :destroy]
+
+      resources :recommendations, only: [:index, :show, :edit, :new, :create, :destroy]
     end
     
     namespace :admin do
