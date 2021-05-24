@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_19_235450) do
+ActiveRecord::Schema.define(version: 2021_05_24_053403) do
 
   create_table "facilities", force: :cascade do |t|
     t.string "sauna_name"
@@ -34,6 +34,23 @@ ActiveRecord::Schema.define(version: 2021_05_19_235450) do
     t.integer "topic_id"
     t.integer "user_id"
     t.string "forum_image_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "recommendations", force: :cascade do |t|
+    t.string "sauna_name"
+    t.string "temperature"
+    t.string "water"
+    t.string "prefecture"
+    t.string "postal_code"
+    t.string "address"
+    t.string "image_id"
+    t.string "working_hours"
+    t.string "phone_number"
+    t.text "price_description"
+    t.string "hp"
+    t.boolean "parking"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
