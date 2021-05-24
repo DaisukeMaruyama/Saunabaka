@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'recommendations/index'
+  get 'recommendations/show'
+  get 'recommendations/new'
+  get 'recommendations/create'
+  get 'recommendations/edit'
+  get 'recommendations/destroy'
   #devise関連
     devise_for :users, :controllers => {
       :registrations => 'devise/users/registrations',
