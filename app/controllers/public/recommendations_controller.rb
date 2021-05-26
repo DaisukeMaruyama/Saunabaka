@@ -1,5 +1,6 @@
-class RecommendationsController < ApplicationController
+class Public::RecommendationsController < ApplicationController
   def index
+    @recommendations = Recommendation.all
   end
 
   def show
