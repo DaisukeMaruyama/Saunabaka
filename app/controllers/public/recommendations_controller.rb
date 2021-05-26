@@ -31,7 +31,7 @@ class Public::RecommendationsController < ApplicationController
   def recommendation_params
     params.require(:recomendation).permit(
       :image,
-			:sauna_name,
+      :sauna_name,
       :temperature,
       :water,
       :prefecture,
