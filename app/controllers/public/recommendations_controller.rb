@@ -14,7 +14,7 @@ class Public::RecommendationsController < ApplicationController
 
   def create
     @recommendation = Recommendation.create(recommendation_params)
-    if @recomendation.save
+    if @recommendation.save
       flash[:notice] = "おすすめサウナを投稿しました。"
       redirect_to recommendations_path
     else
@@ -29,7 +29,7 @@ class Public::RecommendationsController < ApplicationController
   end
 
   def recommendation_params
-    params.require(:recomendation).permit(
+    params.require(:recommendation).permit(
       :image,
       :sauna_name,
       :temperature,
