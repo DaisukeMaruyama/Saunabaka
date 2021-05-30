@@ -23,6 +23,7 @@ class Public::RecommendationsController < ApplicationController
   end
 
   def edit
+    @recommendation = Recommendation.find(params[:id])
   end
 
   def destroy
