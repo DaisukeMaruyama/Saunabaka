@@ -5,7 +5,7 @@
     <p class="lead">編集が終わったら「サウナ施設を編集」を押してください。</p>
   </div>
   
-  <%= form_with model: @recommendation, url: recommendations_path, method: :post, local:true do |f| %>	
+  <%= form_with model: @recommendation, url: recommendation_path, method: :put, local:true do |f| %>	
     <div class="col-12">
       <h4 class="mb-3">サウナデータ</h4>
       <form class="needs-validation" novalidate>
