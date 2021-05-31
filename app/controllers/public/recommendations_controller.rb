@@ -26,6 +26,16 @@ class Public::RecommendationsController < ApplicationController
     @recommendation = Recommendation.find(params[:id])
   end
 
+  def update
+    @recommendation = Recommendation.find(params[:id])
+    if @recommendation.update(recommendation_params)
+      flash[notice] = "サウナ施設を更新しました。"
+      redirect_to recommendations_path
+    else
+      render :edit
+    end
+  end
+
   def destroy
   end
 
