@@ -28,7 +28,7 @@ Rails.application.routes.draw do
 
       resources :topics, only: [:index, :show, :edit, :new, :create, :destroy]
 
-      resources :recommendations, only: [:index, :show, :edit, :new, :create, :destroy]
+      resources :recommendations, only: [:index, :show, :edit, :new, :create, :destroy, :update]
     end
     
     namespace :admin do
