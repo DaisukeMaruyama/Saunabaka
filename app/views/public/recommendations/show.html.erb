@@ -1,2 +1,60 @@
-<h1>Recommendations#show</h1>
-<p>Find me in app/views/recommendations/show.html.erb</p>
+<div id="main" class="container-fluid show-body" >
+  <div class="row my-card justify-content-center mx-2 mt-5">
+    <div class="col-lg-5 show-photo">
+      <%= attachment_image_tag @recommendation, :image, size:"550x550", fallback: "no-image.jpeg", class:"card-img-top", format: "jpeg" %>
+    </div>
+    <div class="col-lg-7">
+      <h1 class="sauna-name"><%= @recommendation.sauna_name %></h1>
+
+      <table class="table show-table">
+        <tr>
+          <td class="item">郵便番号</td>
+          <td><%= @recommendation.postal_code %></td>
+        </tr>
+        <tr>
+          <td class="item">都道府県</td>
+          <td><%= @recommendation.prefecture %></td>
+        </tr>
+        <tr>
+          <td class="item">住所</td>
+          <td><%= @recommendation.address %></td>
+        </tr>
+        <tr>
+          <td class="item">電話番号</td>
+          <td><%= @recommendation.phone_number %></td>
+        </tr>
+        <tr>
+          <td class="item">サウナ室温</td>
+          <td><%= @recommendation.temperature %>℃</td>
+        </tr>
+        <tr>
+          <td class="item">水風呂温度</td>
+          <td><%= @recommendation.water %>℃</td>
+        </tr>
+        <tr>
+          <td class="item">価格</td>
+          <td><%= simple_format(@recommendation.price_description) %></td>
+        </tr>
+        <tr>
+          <td class="item">営業時間</td>
+          <td><%= @recommendation.working_hours %></td>
+        </tr>
+        <tr>
+          <td class="item">ホームページ</td>
+          <td><%= @recommendation.hp %></td>
+        </tr>
+        <tr>
+          <td class="item">駐車場</td>
+          <td>
+            <% if @recommendation.parking == "有" %>
+            有
+            <% else %>
+            無
+            <% end %>
+          </td>
+        </tr>
+      </table>
+    </div>
+      
+  </div>
+</div>
