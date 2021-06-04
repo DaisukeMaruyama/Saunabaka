@@ -8,7 +8,13 @@
 				<div class="message-section">
 				  <%= simple_format(forum.message, sanitize: true)%>
 				</div>
-				<p class="text-right mt-1"><%= link_to '削除', forum_path(forum.id), method: :delete, class:"btn-sm forum-delete-button btn-danger" %> | <%= forum.created_at.to_s(:datetime_jp)  %></p>
+				<p class="text-right mt-1">
+					<% if current_user.id == forum.user_id %>
+						<%= link_to '削除', forum_path(forum.id), method: :delete, class:"btn-sm forum-delete-button btn-danger" %>
+					| 
+					<% end %>	
+					<%= forum.created_at.to_s(:datetime_jp)  %>
+			  </p>
 			</div>
 		<% end %>
 
