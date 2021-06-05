@@ -14,6 +14,7 @@ class Public::RecommendationsController < ApplicationController
 
   def create
     @recommendation = Recommendation.create(recommendation_params)
+    @recommendation.user_id = current_user.id
     if @recommendation.save
       flash[:notice] = "おすすめサウナを投稿しました。"
       redirect_to recommendations_path
