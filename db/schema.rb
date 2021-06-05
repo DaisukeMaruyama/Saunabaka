@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2021_05_24_053403) do
     t.text "price_description"
     t.string "hp"
     t.boolean "parking"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
