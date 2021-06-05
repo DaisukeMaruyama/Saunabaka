@@ -6,5 +6,6 @@ class User < ApplicationRecord
 
   has_many :forums, dependent: :destroy
   has_many :topics, dependent: :destroy
+  has_many :recommendations, dependent: :destroy
   
 end
