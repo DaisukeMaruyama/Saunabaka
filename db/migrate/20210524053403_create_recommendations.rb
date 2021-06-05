@@ -13,6 +13,7 @@ class CreateRecommendations < ActiveRecord::Migration[6.0]
       t.text :price_description
       t.string :hp
       t.boolean :parking
+      t.integer :user_id
       t.timestamps
     end
   end
