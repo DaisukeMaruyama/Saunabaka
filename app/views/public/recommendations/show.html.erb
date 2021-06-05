@@ -54,7 +54,9 @@
           </td>
         </tr>
       </table>
-      <%= link_to '施設情報を編集', edit_recommendation_path(@recommendation), class:"btn btn-success float-right" %>
+      <% if @recommendation.user_id == current_user.id %>
+        <%= link_to '施設情報を編集', edit_recommendation_path(@recommendation), class:"btn btn-success float-right" %>
+      <% end %>  
     </div>
       
   </div>
