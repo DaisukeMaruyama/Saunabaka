@@ -29,6 +29,15 @@ class Admin::FacilitiesController < ApplicationController
 		@facility = Facility.find(params[:id])
 	end
 
+	def update
+		@facility = Facility.find(params[:id])
+		if @facility.update(facility_params)
+			flash[:notice] = "サウナ施設情報を更新しました。"
+			redirect_to edit_facility_path
+		else
+			render :edit
+		end
+	end
 	private 
 
 	def facility_params
