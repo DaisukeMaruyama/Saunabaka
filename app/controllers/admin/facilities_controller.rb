@@ -25,7 +25,8 @@ class Admin::FacilitiesController < ApplicationController
   def destroy
   end
 
-  def edit
+	def edit
+		@facility = Facility.find(params[:id])
 	end
 
 	private 
