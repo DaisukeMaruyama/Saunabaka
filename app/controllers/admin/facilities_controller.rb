@@ -38,6 +38,7 @@ class Admin::FacilitiesController < ApplicationController
 			render :edit
 		end
 	end
+	
 	private 
 
 	def facility_params
