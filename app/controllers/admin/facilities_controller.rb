@@ -22,7 +22,11 @@ class Admin::FacilitiesController < ApplicationController
 		end
   end
 
-  def destroy
+	def destroy
+		@facility = Facility.find(params[:id])
+		@facility.destroy
+		flash[:notice] = "サウナ施設情報を削除しました。"
+		redirect_to admin_facilities_path
   end
 
 	def edit
@@ -38,7 +42,7 @@ class Admin::FacilitiesController < ApplicationController
 			render :edit
 		end
 	end
-	
+
 	private 
 
 	def facility_params
