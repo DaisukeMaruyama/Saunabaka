@@ -37,7 +37,7 @@ class Admin::FacilitiesController < ApplicationController
 		@facility = Facility.find(params[:id])
 		if @facility.update(facility_params)
 			flash[:notice] = "サウナ施設情報を更新しました。"
-			redirect_to admin_facility_path
+			redirect_to admin_facilities_path
 		else
 			render :edit
 		end
