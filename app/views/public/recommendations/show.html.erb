@@ -55,10 +55,10 @@
         </tr>
       </table>
       <% if @recommendation.user_id == current_user.id %>
-      <div class="admin-facility-bottun float-right">
-        <%= link_to '施設情報を編集', edit_recommendation_path(@recommendation), class:"btn btn-success" %>
-        <%= link_to '施設情報を削除', recommendation_path(@recommendation), method: :delete, class:"btn btn-danger" %>
-      </div>  
+        <div class="admin-facility-bottun float-right">
+          <%= link_to '施設情報を編集', edit_recommendation_path(@recommendation), class:"btn btn-success" %>
+          <%= link_to '施設情報を削除', recommendation_path(@recommendation), method: :delete, class:"btn btn-danger" %>
+        </div>  
       <% end %>  
     </div>
       
