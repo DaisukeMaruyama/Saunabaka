@@ -4,6 +4,9 @@
       <h1 class="topic-heading">雑談掲示板</h1>
       <h5 class="topic-heading-text">サウナの事でもそれ以外の事でも、皆様の交流掲示板として使ってください。</h5>
       <span>※誹謗中傷禁止　他人の迷惑になる様な投稿はおやめください。</span>
+
+      <% if user_signed_in? %>
+
       <%= form_with model: @topic, url: topics_path, method: :post ,local:true do |f| %>
         <form class="form-inline my-2 my-lg-0">
           <%= f.text_field :title, class:"mr-sm-2" %>
@@ -28,5 +31,10 @@
         <p class="text-right mt-1"><%= topic.created_at.to_s(:datetime_jp)  %></p>
       </div>
     <% end %>
+
+    <% else %>
+    <% end %>
+
+
   </div>
 </div>
