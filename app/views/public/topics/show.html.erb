@@ -3,7 +3,7 @@
 		<h1 class="mt-5 mb-3 col-12 text-center"><%= @topic.title %></h1>
 		<p class="col-12"><%= @forums.count %>件表示 </p>
 		<% @forums.each_with_index do |forum , idx| %>
-			<div class="message-box col-12">
+			<div class="message-box col-12 mb-3">
 				<p class="text-left"><%= idx + 1 %>. <%= forum.user.name %> </p>
 				<div class="message-section">
 				  <%= simple_format(forum.message, sanitize: true)%>
