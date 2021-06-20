@@ -24,7 +24,7 @@ Rails.application.routes.draw do
     #scope module: :public doでpublicフォルダへまとめる。※URLにpublicがつくことはない
     scope module: :public do
       
-      resources :facilities, only: [:index, :show, :edit, :new, :create, :destroy, :update] do
+      resources :facilities, only: [:index, :show, :edit, :new, :create, :update] do
         resource :favorites, only: [:create, :destroy]
       end
 
