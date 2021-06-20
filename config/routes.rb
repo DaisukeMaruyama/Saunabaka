@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'favorites/create'
+  get 'favorites/destory'
   #devise関連
     devise_for :users, :controllers => {
       :registrations => 'devise/users/registrations',
