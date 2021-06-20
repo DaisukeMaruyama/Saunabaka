@@ -26,6 +26,9 @@ Rails.application.routes.draw do
         resource :favorites, only: [:create, :destroy]
       end
 
+      resources :users, only: [:show, :edit, :update] do
+        get :favorites, on: :collection
+      end
     
       resources :forums, only: [:index, :show, :edit, :new, :create, :destroy]
 
