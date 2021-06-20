@@ -22,9 +22,6 @@ class Public::FacilitiesController < ApplicationController
 		end
   end
 
-  def destroy
-  end
-
   def edit
     @facility = Facility.find(params[:id])
   end
