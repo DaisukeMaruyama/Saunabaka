@@ -10,6 +10,9 @@ class Public::FavoritesController < ApplicationController
   end
 
   def destory
+    @favorite = Favorite.find_by(user_id: current_user.id, facility_id: @facility.id)
+    @facility.destory
+    flash[:notice] = "お気に入りを解除しました。"
   end
 
   def set_facility
