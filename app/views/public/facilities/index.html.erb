@@ -61,7 +61,11 @@
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to '見てみる' , facility_path(facility) %></button>
                 </div>
-                <small class="text-muted">♡9</small>
+                <small class="text-muted">
+                  <div id="favorites_buttons_<%= facility.id %>">
+                    <%= render partial: 'public/favorites/favorite', locals: { facility: facility} %>
+                  </div>
+                </small>
               </div>
             </div>
           </div>
