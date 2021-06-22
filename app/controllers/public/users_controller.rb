@@ -9,7 +9,12 @@ class Public::UsersController < ApplicationController
   end
 
   def update
-
+    if User.update(user_params)
+      flash[:notice] = "ユーザー情報を更新しました。"
+      redirect_to user_path
+    else
+      render :edit
+    end
   end
 
   def withdraw
