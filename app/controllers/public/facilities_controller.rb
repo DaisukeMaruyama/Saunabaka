@@ -6,20 +6,20 @@ class Public::FacilitiesController < ApplicationController
 
   def show
     @facility = Facility.find(params[:id])
-	end
-	
+  end
+  
   def new
     @facility = Facility.new
-	end
+  end
 
-	def create
-		@facility = Facility.new(facility_params)
-		if @facility.save
-			flash[:notice] = "新しいサウナ施設を投稿しました。"
-			redirect_to facilities_path
-		else
-			render :index
-		end
+  def create
+    @facility = Facility.new(facility_params)
+    if @facility.save
+      flash[:notice] = "新しいサウナ施設を投稿しました。"
+      redirect_to facilities_path
+    else
+      render :index
+    end
   end
 
   def edit
@@ -36,12 +36,12 @@ class Public::FacilitiesController < ApplicationController
     end
   end
 
-	private 
+  private 
 
-	def facility_params
-		params.require(:facility).permit(
+  def facility_params
+    params.require(:facility).permit(
       :image,
-			:sauna_name,
+      :sauna_name,
       :temperature,
       :water,
       :prefecture,
@@ -52,7 +52,7 @@ class Public::FacilitiesController < ApplicationController
       :price_description,
       :hp,
       :parking
-		)
+    )
   end
   
 end
