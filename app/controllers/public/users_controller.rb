@@ -2,6 +2,8 @@ class Public::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    favorites = Favorite.where(user_id: current_user.id).pluck(:facility_id)  # ログイン中のユーザーのお気に入りのfavorite_idカラムを取得
+    @favorite_list = Facility.find(favorites)  
   end
 
   def edit
