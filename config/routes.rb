@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  get 'users/show'
+  get 'users/edit'
+  get 'users/update'
+  get 'users/withdraw'
+  get 'users/unsubscribe'
   get 'favorites/create'
   get 'favorites/destory'
   #devise関連
