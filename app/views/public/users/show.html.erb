@@ -1,2 +1,19 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12 mt-4 text-center">
+      <h2 class="user-heading"><%= @user.name %>さんのページ</h2>
+      <p>登録情報の確認・更新ができます。</p>
+    </div>
+    <div class="col-md-6">
+      <p class="user-item">名前（ニックネームでも可）</p>
+      <%= @user.name %>
+      <p class="user-item">メールアドレス</p>  
+      <%= @user.email %><br>
+      <%= link_to "ユーザー情報編集", edit_user_path, class:"btn btn-success mt-4" %><br>
+      <%= link_to "ログインパスワード変更", edit_user_path, class:"btn btn-info mt-3" %>
+      <%# とりあえず、edit_user_path　後でパスワード変更用の画面を作成 %>
+    </div>
+    <div class="col-md-6">
+    </div>
+  </div>
+</div>
