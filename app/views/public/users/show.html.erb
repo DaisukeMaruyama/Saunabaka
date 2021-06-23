@@ -15,11 +15,15 @@
     </div>
     <div class="col-md-6">
       <h4 class="user-favorite-heading mt-3 mb-3">お気に入りサウナ</h4>
-      <% @favorite_list.each do |favorite| %>
-        <p class="user-favorite-item">・<%= favorite.sauna_name %>　室温：<%= favorite.temperature %>℃　水風呂：<%= favorite.temperature %>℃　<%= favorite.prefecture %><br>
-          <%= link_to "詳細", facility_path(favorite.id), class:"btn" %>
-          <%= render partial: 'public/favorites/userFavoriteDelete', locals: { favorite: favorite} %>
-        </p>
+      <% if @favorite_list.present? %>
+        <% @favorite_list.each do |favorite| %>
+          <p class="user-favorite-item">・<%= favorite.sauna_name %>　室温：<%= favorite.temperature %>℃　水風呂：<%= favorite.temperature %>℃　<%= favorite.prefecture %><br>
+            <%= link_to "詳細", facility_path(favorite.id), class:"btn" %>
+            <%= render partial: 'public/favorites/userFavoriteDelete', locals: { favorite: favorite} %>
+          </p>
+        <% end %>
+      <% else %>
+        <p>お気に入りに登録されているサウナがありません。</p>
       <% end %>
     </div>
   </div>
