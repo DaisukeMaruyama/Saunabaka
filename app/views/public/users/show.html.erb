@@ -19,7 +19,7 @@
         <% @favorite_list.each do |favorite| %>
           <p class="user-favorite-item">・<%= favorite.sauna_name %>　室温：<%= favorite.temperature %>℃　水風呂：<%= favorite.temperature %>℃<br>
             <span class="ml-3" ><%= favorite.prefecture %></span>
-            <%= link_to "詳細", facility_path(favorite.id), class:"btn ml-4" %>
+            <%= link_to "詳細", facility_path(favorite.id), class:"btn ml-3" %>
             <%= render partial: 'public/favorites/userFavoriteDelete', locals: { favorite: favorite} %>
           </p>
         <% end %>
