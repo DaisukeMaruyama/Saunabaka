@@ -28,7 +28,9 @@ Rails.application.routes.draw do
         end
       end
 
-      resources :users, only: [:show, :edit, :update, :withdraw, :unsubscribe] do
+      resources :users, only: [:show, :edit, :update] do
+        get :withdraw
+        delete :unsubscribe
         get :favorites, on: :collection
       end
     
