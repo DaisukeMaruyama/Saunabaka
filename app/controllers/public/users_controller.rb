@@ -19,10 +19,15 @@ class Public::UsersController < ApplicationController
     end
   end
 
-  def withdraw
+  def unsubscribe
+    @user = User.find(current_user.id)
   end
 
-  def unsubscribe
+  def withdraw
+    @user.update(is_delete: "deleted")
+    reset_session
+    flash[:notice] = "退会処理が完了しました。またのご利用をお待ちしております。"
+    redirect_to root_path
   end
 
   private
