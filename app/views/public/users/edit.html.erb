@@ -7,9 +7,9 @@
     <div class="col-md-12 text-center">
 			<%= form_with model: @user, url: user_path(@user), method: :put, local:true  do |f| %>
       <p class="user-item">名前（ニックネームでも可）</p>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, class:"user-edit-blank" %>
       <p class="user-item">メールアドレス</p>  
-			<%= f.text_field :email %><br>
+			<%= f.text_field :email, class:"user-edit-blank"  %><br>
 			<%= f.submit "保存", class:"btn btn-success mt-2" %>
 		 <% end %>
     </div>
