@@ -29,6 +29,8 @@ Rails.application.routes.draw do
       end
 
       resources :users, only: [:show, :edit, :update] do
+        patch :change_password
+        get :newpassword
         delete :withdraw
         get :unsubscribe
         get :favorites, on: :collection
