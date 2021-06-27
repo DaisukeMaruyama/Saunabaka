@@ -31,10 +31,25 @@ class Public::UsersController < ApplicationController
     redirect_to root_path
   end
 
+  def change_password
+    @user = User.find(params[:id])
+    if @user.update(password_params)
+      sign_in(@user, :bypass => true) #パスワードを変えたときにログインキープ
+      flash[:notice] = "パスワードを変更しました。"
+      redirect_to user_path
+    else
+      render :change_password
+    end
+  end
+
   private
 
   def user_params
     params.require(:user).permit(:name, :email)
+  end
+
+  def password_params
+    params.require(:user).permit(:password, :password_confirmation)
   end
 
 end
