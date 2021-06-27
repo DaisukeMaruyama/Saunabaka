@@ -10,7 +10,7 @@
       <p class="user-item">メールアドレス</p>  
       <%= @user.email %><br>
       <%= link_to "ユーザー情報編集", edit_user_path, class:"btn btn-success mt-4" %><br>
-      <%= link_to "ログインパスワード変更", edit_user_path, class:"btn btn-info mt-3" %><br>
+      <%= link_to "ログインパスワード変更", user_newpassword_path(@user), class:"btn btn-info mt-3" %><br>
       <%# とりあえず、edit_user_path　後でパスワード変更用の画面を作成 %>
       <%= link_to "退会", user_unsubscribe_path(@user), class:"btn btn-danger mt-3" %>
     </div>
