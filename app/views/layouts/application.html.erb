@@ -42,7 +42,7 @@
           </li>
           <% if user_signed_in? %>
             <li class="nav-item">
-              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link', data: { confirm: "本当にログアウトしますか？" }  %>
             </li>
           <% else %>
             <li class="nav-item">
@@ -79,12 +79,12 @@
 
     <main>
       <% if flash[:notice] %>
-        <div class="flash">
+        <div class="alert alert-primary text-center mb-0" role="alert">
           <%= flash[:notice] %>
         </div>
       <% end %>
       <% if flash[:alert] %>
-        <div class="flash" style="color: red;">
+        <div class="alert alert-danger text-center mb-0" role="alert">
           <%= flash[:alert] %>
         </div>
       <% end %>
