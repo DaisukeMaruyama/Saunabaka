@@ -31,7 +31,7 @@ Rails.application.routes.draw do
       resources :users, only: [:show, :edit, :update] do
         patch :change_password
         get :newpassword
-        delete :withdraw
+        put :withdraw
         get :unsubscribe
         get :favorites, on: :collection
       end
