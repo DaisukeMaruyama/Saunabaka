@@ -1,5 +1,6 @@
 class Public::UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :ensure_correct_user, only: [:edit, :show]
 
   def show
     @user = User.find(params[:id])
@@ -48,6 +49,13 @@ class Public::UsersController < ApplicationController
   end
 
   private
+
+  def ensure_correct_user
+    if params[:id].to_i != current_user.id
+      flash[:alert] = "権限がありません。"
+      redirect_to user_path(current_user)
+    end  
+  end
 
   def user_params
     params.require(:user).permit(:name, :email)
