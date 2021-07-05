@@ -1,13 +1,13 @@
 <% if user_signed_in? %>
     <% if facility.favorited_by?(current_user) %>
-        <p><span>お気に入り解除: </span>
+        <p><span class="favorite-word">お気に入り解除: </span>
             <%= link_to facility_favorites_path(facility.id), class:"favorite-count", method: :delete, remote: true do %>
                 <i class="fas fa-heart likeIcon"></i>
                 <span class="favorite-count"><%= facility.favorites.count %></span>
             <% end %>
         </p>
     <% else %>
-        <p><span>お気に入り登録: </span>
+        <p><span class="favorite-word">お気に入り登録: </span>
             <%=link_to facility_favorites_path(facility.id), class:"favorite-count", method: :post, remote: true do %>
                 <i class="far fa-heart unlikeIcon"></i>
                 <%= facility.favorites.count %>
@@ -15,5 +15,5 @@
         </p>
     <% end %>
 <% else %>
-    <p><span>お気に入り数: </span><%= facility.favorites.count %></p>
+    <p><span class="favorite-word">お気に入り数: </span><%= facility.favorites.count %></p>
 <% end %>
