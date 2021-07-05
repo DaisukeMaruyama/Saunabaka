@@ -23,3 +23,11 @@
 .unlikeIcon {
 	color: grey; 
 }
+
+@media screen and (max-width: 995px) {
+
+	.favorite-word {
+		display: none;
+	}
+
+}
