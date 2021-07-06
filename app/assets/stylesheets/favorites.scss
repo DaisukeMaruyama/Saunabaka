@@ -24,10 +24,23 @@
 	color: grey; 
 }
 
+.align-items-center {
+	display: flex;
+	justify-content: space-between;
+}
+
 @media screen and (max-width: 995px) {
 
 	.favorite-word {
 		display: none;
+	}
+
+}
+
+@media screen and (max-width: 767px) {
+  
+  .align-items-center {
+		display: block;
 	}
 
 }
