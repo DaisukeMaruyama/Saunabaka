@@ -15,5 +15,8 @@
         </p>
     <% end %>
 <% else %>
-    <p><span class="favorite-word">お気に入り数: </span><%= facility.favorites.count %></p>
+    <p><span class="favorite-word">お気に入り数: </span>
+        <i class="fas fa-heart likeIcon"></i>
+        <%= facility.favorites.count %>
+    </p>
 <% end %>
