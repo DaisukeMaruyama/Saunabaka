@@ -23,7 +23,7 @@
             </div>
             <div class="feedback" style="color: red;">
               <% if @facility.errors.include?(:sauna_name) %>
-                <%= @facility.errors.full_messages_for(:sauna_name).first %>
+                <i class="fas fa-exclamation-circle"></i> <%= @facility.errors.full_messages_for(:sauna_name).first %>
               <% end %>
             </div>
           </div>
@@ -33,7 +33,7 @@
               <%= f.text_field :prefecture, class:"form-control" %>
             <div class="feedback" style="color: red;">
               <% if @facility.errors.include?(:prefecture) %>
-                <%= @facility.errors.full_messages_for(:prefecture).first %>
+                <i class="fas fa-exclamation-circle"></i> <%= @facility.errors.full_messages_for(:prefecture).first %>
               <% end %>
             </div>
           </div>
@@ -43,7 +43,7 @@
             <%= f.text_field :phone_number, class:"form-control" %>
             <div class="feedback" style="color: red;">
               <% if @facility.errors.include?(:phone_number) %>
-                <%= @facility.errors.full_messages_for(:phone_number).first %>
+                <i class="fas fa-exclamation-circle"></i> <%= @facility.errors.full_messages_for(:phone_number).first %>
               <% end %>
             </div>
           </div>
@@ -55,7 +55,7 @@
             </div>
             <div class="feedback" style="color: red;">
               <% if @facility.errors.include?(:postal_code) %>
-                <%= @facility.errors.full_messages_for(:postal_code).first %>
+                <i class="fas fa-exclamation-circle"></i> <%= @facility.errors.full_messages_for(:postal_code).first %>
               <% end %>
             </div>
           </div>
@@ -67,7 +67,7 @@
             </div>
             <div class="feedback" style="color: red;">
               <% if @facility.errors.include?(:address) %>
-                <%= @facility.errors.full_messages_for(:address).first %>
+                <i class="fas fa-exclamation-circle"></i> <%= @facility.errors.full_messages_for(:address).first %>
               <% end %>
             </div>
           </div>
@@ -77,7 +77,7 @@
             <%= f.text_field :temperature, class:"form-control" %>
             <div class="feedback" style="color: red;">
               <% if @facility.errors.include?(:temperature) %>
-                <%= @facility.errors.full_messages_for(:temperature).first %>
+                <i class="fas fa-exclamation-circle"></i> <%= @facility.errors.full_messages_for(:temperature).first %>
               <% end %>
             </div>
           </div>
@@ -87,7 +87,7 @@
               <%= f.text_field :water, class:"form-control" %>
               <div class="feedback" style="color: red;">
                 <% if @facility.errors.include?(:water) %>
-                  <%= @facility.errors.full_messages_for(:water).first %>
+                  <i class="fas fa-exclamation-circle"></i> <%= @facility.errors.full_messages_for(:water).first %>
                 <% end %>
               </div>
           </div>
@@ -97,7 +97,7 @@
               <%= f.text_area :price_description, class:"form-control"  %>
               <div class="feedback" style="color: red;">
                 <% if @facility.errors.include?(:price_description) %>
-                  <%= @facility.errors.full_messages_for(:price_description).first %>
+                  <i class="fas fa-exclamation-circle"></i> <%= @facility.errors.full_messages_for(:price_description).first %>
                 <% end %>
               </div>
           </div>
@@ -107,7 +107,7 @@
               <%= f.text_field :working_hours, class:"form-control", style:"height: 62px;" %>
               <div class="feedback" style="color: red;">
                 <% if @facility.errors.include?(:working_hours) %>
-                  <%= @facility.errors.full_messages_for(:working_hours).first %>
+                  <i class="fas fa-exclamation-circle"></i> <%= @facility.errors.full_messages_for(:working_hours).first %>
                 <% end %>
               </div>
           </div>
@@ -117,7 +117,7 @@
               <%= f.text_field :hp, class:"form-control" %>
               <div class="feedback" style="color: red;">
                 <% if @facility.errors.include?(:hp) %>
-                  <%= @facility.errors.full_messages_for(:hp).first %>
+                  <i class="fas fa-exclamation-circle"></i> <%= @facility.errors.full_messages_for(:hp).first %>
                 <% end %>
               </div>
           </div>
@@ -138,7 +138,7 @@
               <%= f.label :parking, "無" %>
               <div class="feedback" style="color: red;">
                 <% if @facility.errors.include?(:parking) %>
-                  <%= @facility.errors.full_messages_for(:parking).first %>
+                  <i class="fas fa-exclamation-circle"></i> <%= @facility.errors.full_messages_for(:parking).first %>
                 <% end %>
               </div>
           </div>
@@ -152,7 +152,7 @@
           <%= f.attachment_field :image %>
           <div class="feedback" style="color: red;">
             <% if @facility.errors.include?(:image) %>
-              <%= @facility.errors.full_messages_for(:image).first %>
+              <i class="fas fa-exclamation-circle"></i> <%= @facility.errors.full_messages_for(:image).first %>
             <% end %>
           </div>
         </div>
