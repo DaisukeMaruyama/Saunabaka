@@ -18,7 +18,7 @@ class Public::FacilitiesController < ApplicationController
       flash[:notice] = "新しいサウナ施設を投稿しました。"
       redirect_to facilities_path
     else
-      render :index
+      render :new
     end
   end
 
