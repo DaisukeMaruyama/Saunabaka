@@ -47,7 +47,23 @@
 }
 
 // レスポンシブ //
-@media (max-width: 650px) {
+@media screen and (min-width: 995px) {
+
+  .card {
+    width: 280px;
+  }
+
+}
+
+@media screen and (min-width: 1200px) {
+
+  .card {
+    width: 350px;
+  }
+
+}
+
+@media screen and (max-width: 650px) {
   
   .show-table td{
       display: block;
