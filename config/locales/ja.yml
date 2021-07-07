@@ -1,6 +1,20 @@
 ---
 ja:
   activerecord:
+    attributes:
+      facility:
+        sauna_name: サウナ施設名
+        prefecture: 都道府県
+        postal_code: 郵便番号
+        phone_number: 電話番号
+        address: 住所
+        temperature: サウナ室温
+        water: 水風呂温度
+        price_description: 価格
+        working_hours: 営業時間
+        hp: ホームページリンク
+        parking: 駐車場の有無
+        image: 施設画像
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
