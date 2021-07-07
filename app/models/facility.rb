@@ -1,5 +1,18 @@
 class Facility < ApplicationRecord
 
+  validates :sauna_name, presence: true
+  validates :prefecture, presence: true
+  validates :phone_number, presence: true
+  validates :postal_code, presence: true
+  validates :address, presence: true
+  validates :temperature, presence: true
+  validates :water, presence: true
+  validates :price_description, presence: true
+  validates :working_hours, presence: true
+  validates :hp, presence: true
+  validates :parking, presence: true
+  validates :image, presence: true
+
   has_many :favorites , dependent: :destroy
   attachment :image
 
