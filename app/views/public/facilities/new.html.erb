@@ -9,6 +9,7 @@
   <%= form_with model: @facility, url: facilities_path, method: :post, local:true do |f| %>	
 
     <% if @facility.errors.any? %>
+      <p class="ml-3" style="color: red;">※ <%= @facility.errors.count %>件のエラーがあります。</p>
     <% end %>
 
     <div class="col-12">
