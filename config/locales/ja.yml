@@ -13,7 +13,7 @@ ja:
         price_description: 価格
         working_hours: 営業時間
         hp: ホームページリンク
-        parking: 駐車場の有無
+        parking: 駐車場有無
         image: 施設画像
     errors:
       messages:
