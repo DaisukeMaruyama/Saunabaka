@@ -6,7 +6,11 @@
     登録前に『全国のサウナ』で重複データがないかご確認頂き、登録を頂けると幸いです。<br>ご協力のほどよろしくお願い申し上げます。</p>
   </div>
 
-  <%= form_with model: @facility, url: admin_facilities_path, method: :post, local:true do |f| %>	
+  <%= form_with model: @facility, url: facilities_path, method: :post, local:true do |f| %>	
+
+    <% if @facility.errors.any? %>
+    <% end %>
+
     <div class="col-12">
       <h4 class="mb-3">サウナデータ</h4>
       <form class="needs-validation" novalidate>
@@ -16,25 +20,31 @@
             <label class="form-label">施設名</label>
             <div class="input-group has-validation">
               <%= f.text_field :sauna_name, class:"form-control" %>
-              <div class="invalid-feedback">
-                Your address is required.
-              </div>
+            </div>
+            <div class="feedback" style="color: red;">
+              <% if @facility.errors.include?(:sauna_name) %>
+                <%= @facility.errors.full_messages_for(:sauna_name).first %>
+              <% end %>
             </div>
           </div>
 
           <div class="col-sm-6">
             <label class="form-label">都道府県</label>
               <%= f.text_field :prefecture, class:"form-control" %>
-            <div class="invalid-feedback">
-              Valid first name is required.
+            <div class="feedback" style="color: red;">
+              <% if @facility.errors.include?(:prefecture) %>
+                <%= @facility.errors.full_messages_for(:prefecture).first %>
+              <% end %>
             </div>
           </div>
 
           <div class="col-sm-6">
             <label class="form-label">電話番号</label>
             <%= f.text_field :phone_number, class:"form-control" %>
-            <div class="invalid-feedback">
-              Valid first name is required.
+            <div class="feedback" style="color: red;">
+              <% if @facility.errors.include?(:phone_number) %>
+                <%= @facility.errors.full_messages_for(:phone_number).first %>
+              <% end %>
             </div>
           </div>
 
@@ -42,9 +52,11 @@
             <label class="form-label">郵便番号</label>
             <div class="input-group has-validation">
               <%= f.text_field :postal_code, class:"form-control" %>
-              <div class="invalid-feedback">
-                Your address is required.
-              </div>
+            </div>
+            <div class="feedback" style="color: red;">
+              <% if @facility.errors.include?(:postal_code) %>
+                <%= @facility.errors.full_messages_for(:postal_code).first %>
+              <% end %>
             </div>
           </div>
 
@@ -52,50 +64,62 @@
             <label class="form-label">住所</label>
             <div class="input-group has-validation">
               <%= f.text_field :address, class:"form-control" %>
-              <div class="invalid-feedback">
-                Your address is required.
-              </div>
+            </div>
+            <div class="feedback" style="color: red;">
+              <% if @facility.errors.include?(:address) %>
+                <%= @facility.errors.full_messages_for(:address).first %>
+              <% end %>
             </div>
           </div>
 
           <div class="col-sm-6">
             <label class="form-label">サウナ室温</label>
             <%= f.text_field :temperature, class:"form-control" %>
-            <div class="invalid-feedback">
-              Valid first name is required.
+            <div class="feedback" style="color: red;">
+              <% if @facility.errors.include?(:temperature) %>
+                <%= @facility.errors.full_messages_for(:temperature).first %>
+              <% end %>
             </div>
           </div>
 
           <div class="col-sm-6">
             <label class="form-label">水風呂</label>
               <%= f.text_field :water, class:"form-control" %>
-            <div class="invalid-feedback">
-              Valid first name is required.
-            </div>
+              <div class="feedback" style="color: red;">
+                <% if @facility.errors.include?(:water) %>
+                  <%= @facility.errors.full_messages_for(:water).first %>
+                <% end %>
+              </div>
           </div>
 
           <div class="col-sm-6">
             <label class="form-label">価格</label>
               <%= f.text_area :price_description, class:"form-control"  %>
-            <div class="invalid-feedback">
-              Valid first name is required.
-            </div>
+              <div class="feedback" style="color: red;">
+                <% if @facility.errors.include?(:price_description) %>
+                  <%= @facility.errors.full_messages_for(:price_description).first %>
+                <% end %>
+              </div>
           </div>
 
           <div class="col-sm-6">
             <label class="form-label">営業時間</label>
               <%= f.text_field :working_hours, class:"form-control", style:"height: 62px;" %>
-            <div class="invalid-feedback">
-              Valid first name is required.
-            </div>
+              <div class="feedback" style="color: red;">
+                <% if @facility.errors.include?(:working_hours) %>
+                  <%= @facility.errors.full_messages_for(:working_hours).first %>
+                <% end %>
+              </div>
           </div>
 
           <div class="col-sm-6">
             <label class="form-label">ホームページ</label>
               <%= f.text_field :hp, class:"form-control" %>
-            <div class="invalid-feedback">
-              Valid first name is required.
-            </div>
+              <div class="feedback" style="color: red;">
+                <% if @facility.errors.include?(:hp) %>
+                  <%= @facility.errors.full_messages_for(:hp).first %>
+                <% end %>
+              </div>
           </div>
            
           <%# 空欄のために記載%>
@@ -112,9 +136,11 @@
               <%= f.label :parking, "有" %>
               <%= f.radio_button :parking, "無" %>
               <%= f.label :parking, "無" %>
-            <div class="invalid-feedback">
-              Zip code required.
-            </div>
+              <div class="feedback" style="color: red;">
+                <% if @facility.errors.include?(:parking) %>
+                  <%= @facility.errors.full_messages_for(:parking).first %>
+                <% end %>
+              </div>
           </div>
         </div>
 
@@ -124,8 +150,10 @@
           <label class="form-label">施設画像</label>
           <p class="image-text">※サウナ詳細ページの画像になります。</p>
           <%= f.attachment_field :image %>
-          <div class="invalid-feedback">
-            Zip code required.
+          <div class="feedback" style="color: red;">
+            <% if @facility.errors.include?(:image) %>
+              <%= @facility.errors.full_messages_for(:image).first %>
+            <% end %>
           </div>
         </div>
 
