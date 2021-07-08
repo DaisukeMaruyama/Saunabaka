@@ -1,4 +1,6 @@
 class Public::TopicsController < ApplicationController
+  before_action :authenticate_user!, only: [:destroy, :create, :edit, :show]
+
   
   def index
     @q = Topic.ransack(params[:q])
