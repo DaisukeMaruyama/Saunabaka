@@ -30,7 +30,7 @@
 }
 
 .card {
-  min-height: 450px;
+
 }
 
 .show-photo {
@@ -51,6 +51,7 @@
 
   .card {
     width: 280px;
+    min-height: 400px;
   }
 
 }
@@ -59,6 +60,15 @@
 
   .card {
     width: 350px;
+    min-height: 400px;
+  }
+
+}
+
+@media screen and (max-width: 994px) {
+
+  .card {
+    min-height: 500px;
   }
 
 }
