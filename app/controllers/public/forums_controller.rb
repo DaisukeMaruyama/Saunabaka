@@ -1,4 +1,5 @@
 class Public::ForumsController < ApplicationController
+  before_action :authenticate_user!, only: [:destroy, :create]
 
   def index
     @forums = Forum.all
