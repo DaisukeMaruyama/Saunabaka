@@ -43,7 +43,6 @@ Rails.application.configure do
       password: ENV['SMTP_PASSWORD'],
       enable_starttls_auto: true
   }
-end
 
   config.action_mailer.perform_caching = false
 
