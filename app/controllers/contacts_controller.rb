@@ -1,4 +1,4 @@
-class Public::ContactsController < ApplicationController
+class ContactsController < ApplicationController
 	def new
     @contact = Contact.new
   end
@@ -11,7 +11,7 @@ class Public::ContactsController < ApplicationController
       render :new
     end
   end
-　
+
   # 入力内容に誤りがあった場合
   def back
     @contact = Contact.new(contact_params)
@@ -23,7 +23,7 @@ class Public::ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     if @contact.save
-      ContactMailer.send_mail(@contact).deliver_now
+      ContactMailer.contact_mail(@contact).deliver_now
       redirect_to done_path
     else
       render :new
