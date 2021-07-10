@@ -41,6 +41,13 @@ Rails.application.routes.draw do
       resources :topics, only: [:index, :show, :edit, :new, :create, :destroy]
 
       resources :recommendations, only: [:index, :show, :edit, :new, :create, :destroy, :update]
+
+      #お問い合わせ
+      resources :contacts, only: [:new, :create]
+      post 'contacts/confirm', to: 'contacts#confirm', as: 'confirm'
+      post 'contacts/back', to: 'contacts#back', as: 'back'
+      get 'done', to: 'contacts#done', as: 'done'
+
     end
     
     namespace :admin do
