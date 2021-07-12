@@ -29,10 +29,7 @@ class ContactsController < ApplicationController
       render :new
     end
   end
-
-  def done
-  end
-
+  
   private
 
   def contact_params
