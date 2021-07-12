@@ -1,35 +1,36 @@
 <div class="container">
   <div class="row">
-    <table>
-      <tbody>
-        <tr>
-          <td class="text-center" style="width: 30%;">お名前</td>
-          <td><%= @contact.name %></td>
-        </tr>
-        <tr>
-          <td class="text-center" style="width: 30%;">メールアドレス</td>
-          <td><%= @contact.email %></td>
-        </tr>
-        <tr>
-          <td class="text-center">メッセージ</td>
-          <td style="white-space: pre-wrap;"><%= @contact.message %></td>
-        </tr>
-      </tbody>
-    </table>
-    
-    <%= form_for(@contact) do |f| %>
-      <%= f.hidden_field :name %>
-      <%= f.hidden_field :email %>
-      <%= f.hidden_field :subject %>
-      <%= f.hidden_field :message %>
-      <div><%= f.submit '送信' %></div>
-    <% end %>
-    <%= form_for @contact, url: back_path do |f| %>
-      <%= f.hidden_field :name %>
-      <%= f.hidden_field :email %>
-      <%= f.hidden_field :subject %>
-      <%= f.hidden_field :message %>
-      <div><%= f.submit '入力画面に戻る' %></div>
-    <% end %>
+    <div class="col-12">
+      <h3 class="mt-4 mb-4">送信内容確認</h3>
+      <div class="form-group">
+        <label>名前</label> 
+          <span class="form-control  contact-textField"><%= @contact.name %></span>
+        </div>
+        
+      <div class="form-group">
+        <label>メールアドレス</label> 
+        <span class="form-control  contact-textField"><%= @contact.email %></span>
+      </div>
+        
+      <div class="form-group">
+        <label>送信内容</label> 
+        <span class="form-control contact-textArea" style="height: 300px;"><%= @contact.message %></span>
+      </div>
+      
+      <%= form_for(@contact) do |f| %>
+        <%= f.hidden_field :name %>
+        <%= f.hidden_field :email %>
+        <%= f.hidden_field :subject %>
+        <%= f.hidden_field :message %>
+        <div class="mb-3"><%= f.submit '送信' %></div>
+      <% end %>
+      <%= form_for @contact, url: back_path do |f| %>
+        <%= f.hidden_field :name %>
+        <%= f.hidden_field :email %>
+        <%= f.hidden_field :subject %>
+        <%= f.hidden_field :message %>
+        <div class="mb-4"><%= f.submit '入力画面に戻る' %></div>
+      <% end %>
+    </div>
   </div>
 </div>
