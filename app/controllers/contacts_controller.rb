@@ -24,7 +24,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     if @contact.save
       ContactMailer.contact_mail(@contact).deliver_now
-      redirect_to done_path
+      redirect_to root_path, notice: 'お問い合わせ有難う御座います。確認が取れ次第折り返しご連絡致します。'
     else
       render :new
     end
