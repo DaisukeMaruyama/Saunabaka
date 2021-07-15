@@ -1,2 +1,76 @@
-<h1>Search#search</h1>
-<p>Find me in app/views/search/search.html.erb</p>
+<section class="py-5 text-center saunas-index">
+  <div class="container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Saunas</h1>
+        <p class="lead saunas-index-text">全国のサウナ施設がここに集結。今日明日に行きたいサウナを是非ここで見つけてください！</p>
+        <p>
+          <span class="index-span">※『新しいサウナを登録』より施設情報登録にご協力ください。</span>
+  
+          <%= search_form_for @q do |f| %>
+            <table class="text-left table table-borderless search-table">
+              <tr>
+                <td><%= f.label :sauna_name , "施設名" %></td>
+                <td><%= f.search_field :sauna_name_cont %></td>
+              </tr>
+              <tr>
+                <td><%= f.label :prefecture, "都道府県" %></td>
+                <td><%= f.search_field :prefecture_cont %></td>
+              </tr>
+              <tr>
+                <td><%= f.label :address, "住所" %></td>
+                <td><%= f.search_field :address_cont %></td>
+              </tr>
+              <tr>
+                <td><%= f.label :temperature, "サウナ室温" %></td>
+                <td><%= f.search_field :temperature_gteq, placeholder:"何℃"  %>〜<%= f.search_field :temperature_lteq, placeholder:"何℃" %></td>
+              </tr>
+              <tr>
+                <td><%= f.label :water, "水風呂" %></td>
+                <td><%= f.search_field :water_gteq, placeholder:"何℃"  %>〜<%= f.search_field :water_lteq, placeholder:"何℃" %></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><%= f.submit "検索", class:"sauna-search" %></td>
+              </tr>
+            </table>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="album py-5 bg-light">
+  <div class="container">
+
+    <div class="d-flex justify-content-end">
+      <%= link_to '新しいサウナを登録', "facilities/new", class:"btn btn-success" %>
+    </div>
+    <p><%= @facilities.count %>件表示</p>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <% @facilities.each do |facility| %>
+        <div class="col">
+          <div class="card shadow-sm">
+            <%= attachment_image_tag facility, :image, size:"190x225", fallback: "no-image.jpeg", class:"card-img-top", format: "jpeg" %>
+            <div class="card-body">
+              <p class="card-text"><%= facility.sauna_name %></p>
+              <p class="sauna-temperature">室温:<span><%= facility.temperature %>℃</span></p>
+              <p class="water-temperature">水風呂:<span><%= facility.water %>℃</span></p>
+              <div class="align-items-center">
+                <div class="btn-group">
+                  <%= link_to '見てみる' , facility_path(facility), class:"btn btn-sm mb-3 btn-outline-secondary" %>
+                </div>
+                <div id="favorites_buttons_<%= facility.id %>">
+                  <%= render partial: 'public/favorites/favorite', locals: { facility: facility} %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
