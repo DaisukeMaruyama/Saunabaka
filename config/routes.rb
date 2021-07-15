@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'search/search'
   #devise関連
     devise_for :users, :controllers => {
       :registrations => 'devise/users/registrations',
