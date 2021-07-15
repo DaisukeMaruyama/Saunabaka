@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'search/search'
   #devise関連
     devise_for :users, :controllers => {
       :registrations => 'devise/users/registrations',
@@ -47,6 +46,9 @@ Rails.application.routes.draw do
       resources :contacts, only: [:new, :create]
       post 'contacts/confirm', to: 'contacts#confirm', as: 'confirm'
       post 'contacts/back', to: 'contacts#back', as: 'back'
+
+      #header検索
+      get 'search', to: 'search#search'
 
     end
     
