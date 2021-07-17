@@ -16,7 +16,11 @@ class Public::ForumsController < ApplicationController
       flash[:notice] = "新規投稿しました。"
       redirect_to topic_path(params[:forum]['topic_id'])
     else
-      redirect_back(fallback_location: topic_path)
+      @topic = Topic.find_by(id: params[:forum][:topic_id])
+      @forums = Forum.all
+      flash[:alert] = "投稿に失敗しました。"
+      render template: "public/topics/show" 
+      #redirect_back(fallback_location: topic_path(params[:forum][:topic_id]))
     end
   end
 
