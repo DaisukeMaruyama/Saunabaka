@@ -15,6 +15,11 @@ ja:
         hp: ホームページリンク
         parking: 駐車場有無
         image: 施設画像
+      contact:
+        name: お名前
+        email: メールアドレス
+        message: メッセージ
+
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
