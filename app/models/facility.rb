@@ -5,8 +5,8 @@ class Facility < ApplicationRecord
   validates :phone_number, presence: true
   validates :postal_code, presence: true
   validates :address, presence: true
-  validates :temperature, presence: true
-  validates :water, presence: true
+  validates :temperature, presence: true, length: { maximum: 3 }  
+  validates :water, presence: true, length: { maximum: 2 }  
   validates :price_description, presence: true
   validates :working_hours, presence: true
   validates :hp, presence: true
