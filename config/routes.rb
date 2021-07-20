@@ -36,9 +36,9 @@ Rails.application.routes.draw do
         get :favorites, on: :collection
       end
     
-      resources :forums, only: [:index, :show, :edit, :new, :create, :destroy]
+      resources :forums, only: [:index, :show, :new, :create, :destroy]
 
-      resources :topics, only: [:index, :show, :edit, :new, :create, :destroy]
+      resources :topics, only: [:index, :show, :new, :create, :destroy]
 
       resources :recommendations, only: [:index, :show, :edit, :new, :create, :destroy, :update]
 
