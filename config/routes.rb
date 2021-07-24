@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  #rails_adminルーティング
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
   #devise関連
