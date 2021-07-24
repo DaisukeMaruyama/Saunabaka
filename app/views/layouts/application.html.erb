@@ -42,9 +42,15 @@
             </div>
           </li>
           <% if user_signed_in? %>
-            <li class="nav-item">
-              <%= link_to "#{current_user.name}さんのページ", user_path(current_user), class: 'nav-link' %>
-            </li>
+            <% if current_user.admin == true %>
+              <li class="nav-item">
+                <%= link_to "管理者ページ", rails_admin_path, class: 'nav-link' %>
+              </li>
+            <% else %>  
+              <li class="nav-item">
+                <%= link_to "#{current_user.name}さんのページ", user_path(current_user), class: 'nav-link' %>
+              </li>
+            <% end %>  
             <li class="nav-item">
               <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link', data: { confirm: "本当にログアウトしますか？" }  %>
             </li>
