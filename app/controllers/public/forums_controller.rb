@@ -24,9 +24,6 @@ class Public::ForumsController < ApplicationController
     end
   end
 
-  def show
-  end
-
   def destroy
     @forum = Forum.find(params[:id])
     if @forum.destroy
