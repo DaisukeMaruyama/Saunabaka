@@ -54,10 +54,6 @@ Rails.application.routes.draw do
       get 'search', to: 'search#search'
 
     end
-    
-    namespace :admin do
-      resources :facilities, only: [:index, :show, :create, :edit, :new, :destroy]
-    end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
