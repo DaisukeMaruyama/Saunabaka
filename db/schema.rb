@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_24_053759) do
+ActiveRecord::Schema.define(version: 2021_07_27_020130) do
 
   create_table "contacts", force: :cascade do |t|
     t.string "name", null: false
@@ -74,6 +74,15 @@ ActiveRecord::Schema.define(version: 2021_07_24_053759) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.float "rate", null: false
+    t.text "comment"
+    t.integer "user_id"
+    t.integer "facility_id"
+    t.index ["facility_id"], name: "index_reviews_on_facility_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "topics", force: :cascade do |t|
     t.integer "user_id"
     t.integer "forum_id"
@@ -97,6 +106,4 @@ ActiveRecord::Schema.define(version: 2021_07_24_053759) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "favorites", "facilities"
-  add_foreign_key "favorites", "users"
 end
