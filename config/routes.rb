@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     scope module: :public do
       
       resources :facilities, only: [:index, :show, :edit, :new, :create, :update] do
+        resources :reviews
         resource :favorites, only: [:create, :destroy] do
           delete :userFavoriteDelete
         end
