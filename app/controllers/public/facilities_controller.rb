@@ -6,6 +6,15 @@ class Public::FacilitiesController < ApplicationController
 
   def show
     @facility = Facility.find(params[:id])
+
+    if @facility.reviews.blank?
+      @average_review = 0
+    else
+      @average_review = @facility.reviews.average(:rate).round(2)
+    end
+    
+    @facilities_review = @facility.reviews.order(created_at: :desc)
+
   end
   
   def new
