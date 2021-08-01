@@ -61,6 +61,35 @@
 
     <div class="row mx-3 mt-3">
       <h3>このサウナのレビュー</h3>
+      <div class="item-review-section">
+        <h2 class="mb-3">Reviews</h2>
+    
+        <%= render @facilities_review %>
+        <div class="mt-2">
+          <%#<%= paginate @facilities_review %>
+        </div>
+        <% if @facility.reviews.empty? %>
+          <p>まだこの施設のレビューはありません。<p>
+        <% end %>
+        <% if user_signed_in? %>
+          <div>
+            <%= link_to 'レビューを投稿', new_facility_review_path(@facility), class:"btn btn-info mb-5 mt-2" %>
+          </div>
+        <% end %>
+    
+        <script>
+        $('.average-review-rating').empty();
+          $('.average-review-rating').raty({
+            readOnly: true,
+            starOn: "<%= asset_path('star-on.png') %>",
+            starOff: "<%= asset_path('star-off.png') %>",
+            starHalf: "<%= asset_path('star-half.png') %>",
+            score: function() {
+              return $(this).attr('data-score')
+            }
+          });
+        </script>
+      </div>
     </div>  
       
   </div>
