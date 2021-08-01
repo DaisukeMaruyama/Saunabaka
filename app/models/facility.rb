@@ -13,6 +13,7 @@ class Facility < ApplicationRecord
   validates :parking, presence: true
   validates :image, presence: true
 
+  has_many :reviews, dependent: :destroy
   has_many :favorites , dependent: :destroy
   attachment :image
 
