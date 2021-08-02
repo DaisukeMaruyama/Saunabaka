@@ -1,0 +1,38 @@
+<%= form_with(model: [@facility, @facility.reviews.build], local:true) do |f| %>
+   
+  <%= f.hidden_field :facility_id, { value: @facility.id} %>
+  <div class="form-group row">
+    <div class="col-3">
+      <strong><%= f.label :rate,'星評価', class:"review-rating" %></strong>
+    </div>
+    <div id="star">
+      <%= f.hidden_field :rate, id: :review_star, class:"col-8" %>
+    </div>
+  </div>
+
+  <script>
+    $('#star').empty(); 
+    $('#star').raty({
+      size     : 36,
+      starOff:  '<%= asset_path('star-off.png') %>',
+      starOn : '<%= asset_path('star-on.png') %>',
+      starHalf: '<%= asset_path('star-half.png') %>',
+      scoreName: 'review[rate]',
+      half: true,
+    });
+  </script>  
+
+  <div class="form-group row">
+    <div class="col-3">
+      <strong><%= f.label :comment, 'コメント', class:"review-comment" %></strong>
+    </div>
+    <%= f.text_area :comment, class: "form-control", rows: "8", class:"col-8 form-control" %>
+  </div>
+
+  <!-- 確認ボタン -->
+  <div class="form-group row">
+    <div class="col-3"></div>
+      <%= f.submit '投稿', class:"btn btn-success mb-5" %>
+  </div>
+
+<% end %>
