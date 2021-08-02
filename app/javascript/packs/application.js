@@ -18,5 +18,6 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
-require('facility.js')
-require('jquery.raty.js')
+
+window.$ = window.jQuery = require('jquery');
+require('packs/raty')
