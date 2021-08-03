@@ -32,6 +32,10 @@ class Public::ReviewsController < ApplicationController
   end
 
   def destroy
+    if @review.destroy
+      falsh[:notice] = "レビューを削除しました。"
+      redirect_to facility_path(@facility)
+    end  
   end
 
   private
