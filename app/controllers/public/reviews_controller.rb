@@ -23,6 +23,12 @@ class Public::ReviewsController < ApplicationController
   end
 
   def update
+    if @review.update(review_params)
+      falsh[:notice] = "レビューを更新しました。"
+      redirect_to facility_path(@facility)
+    else
+      render :edit
+    end
   end
 
   def destroy
