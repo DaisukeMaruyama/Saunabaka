@@ -1,5 +1,6 @@
 class Public::ReviewsController < ApplicationController
   before_action :find_facility
+  before_action :find_review
 
   def new
     @review = Review.new
@@ -35,6 +36,10 @@ class Public::ReviewsController < ApplicationController
 
   def find_facility
     @facility = Facility.find(params[:facility_id])
+  end
+
+  def find_review
+    @review = Review.find(params[:id])
   end
 
 end
