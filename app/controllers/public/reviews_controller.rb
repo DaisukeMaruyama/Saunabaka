@@ -1,6 +1,6 @@
 class Public::ReviewsController < ApplicationController
   before_action :find_facility
-  before_action :find_review
+  before_action :find_review, only: [:edit, :update, :destroy]
 
   def new
     @review = Review.new
