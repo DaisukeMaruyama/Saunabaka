@@ -6,6 +6,7 @@ class AddRateToReview < ActiveRecord::Migration[6.0]
       t.references :user, foreign_key: true
       t.references :facility, foreign_key: true
     
+      t.timestamps
     end
   end
 end
