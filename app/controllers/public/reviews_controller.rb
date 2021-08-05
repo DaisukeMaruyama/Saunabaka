@@ -12,6 +12,7 @@ class Public::ReviewsController < ApplicationController
     @review.user_id = current_user.id
 
     if @review.save
+      flash[:notice] = "レビューを投稿しました。"
       redirect_to facility_path(@facility)
     else
       render :new
@@ -24,7 +25,7 @@ class Public::ReviewsController < ApplicationController
 
   def update
     if @review.update(review_params)
-      falsh[:notice] = "レビューを更新しました。"
+      flash[:notice] = "レビューを更新しました。"
       redirect_to facility_path(@facility)
     else
       render :edit
@@ -33,7 +34,7 @@ class Public::ReviewsController < ApplicationController
 
   def destroy
     if @review.destroy
-      falsh[:notice] = "レビューを削除しました。"
+      flash[:notice] = "レビューを削除しました。"
       redirect_to facility_path(@facility)
     end  
   end
