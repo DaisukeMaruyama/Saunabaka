@@ -15,6 +15,7 @@ class User < ApplicationRecord
     super && (self.is_deleted == "Nondeleted")
   end       
 
+  has_many :reviews, dependent: :destroy
   has_many :forums, dependent: :destroy
   has_many :topics, dependent: :destroy
   has_many :recommendations, dependent: :destroy
