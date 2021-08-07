@@ -3,8 +3,8 @@
   <h1 class="col-12 mt-4 mb-4">レビュー編集</h1>
   
   <%= form_with(model: [@facility, @review], local:true) do |f| %>
-	
-	<% if @review.errors.any? %>
+  
+  <% if @review.errors.any? %>
     <p class="ml-3" style="color: red;">※ <%= @review.errors.count %>件のエラーがあります。</p>
   <% end %> 
     <!--商品コードの送信-->
@@ -13,12 +13,12 @@
     <!-- 評価 -->
     <div class="form-group row" id="star">
       <div class="col-3">
-				<strong><%= f.label :rate,'評価' %></strong>
-				<div class="feedback" style="color: red;">
-					<% if @review.errors.include?(:rate) %>
-						<i class="fas fa-exclamation-circle"></i><%= @review.errors.full_messages_for(:rate).first %>
-					<% end %>
-				</div>
+        <strong><%= f.label :rate,'評価' %></strong>
+        <div class="feedback" style="color: red;">
+          <% if @review.errors.include?(:rate) %>
+            <i class="fas fa-exclamation-circle"></i><%= @review.errors.full_messages_for(:rate).first %>
+          <% end %>
+        </div>
       </div>
       <%= f.hidden_field :rate, id: :review_star, class:"col-8" %>
     </div>
@@ -38,12 +38,12 @@
     <!-- 口コミ -->
     <div class="form-group row">
       <div class="col-3">
-				<strong><%= f.label :comment, 'コメント' %></strong>
-				<div class="feedback" style="color: red;">
-					<% if @review.errors.include?(:comment) %>
-						<i class="fas fa-exclamation-circle"></i><%= @review.errors.full_messages_for(:comment).first %>
-					<% end %>
-				</div>
+        <strong><%= f.label :comment, 'コメント' %></strong>
+        <div class="feedback" style="color: red;">
+          <% if @review.errors.include?(:comment) %>
+            <i class="fas fa-exclamation-circle"></i><%= @review.errors.full_messages_for(:comment).first %>
+          <% end %>
+        </div>
       </div>
       <%= f.text_area :comment, class: "form-control", rows: "8",
       placeholder:'Comment about this snack!', class:"col-8 form-control" %>
