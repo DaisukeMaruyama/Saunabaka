@@ -3,7 +3,10 @@
   <h1 class="col-12 mt-4 mb-4">レビュー編集</h1>
   
   <%= form_with(model: [@facility, @review], local:true) do |f| %>
-  
+	
+	<% if @review.errors.any? %>
+    <p class="ml-3" style="color: red;">※ <%= @review.errors.count %>件のエラーがあります。</p>
+  <% end %> 
     <!--商品コードの送信-->
     <%= f.hidden_field :item_id, { value: @facility.id} %>
   
