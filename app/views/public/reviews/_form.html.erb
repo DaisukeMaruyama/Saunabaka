@@ -1,7 +1,7 @@
 <%= form_with(model: [@facility, @facility.reviews.build], local:true) do |f| %>
 
   <% if @review.errors.any? %>
-      <p class="ml-3" style="color: red;">※ <%= @review.errors.count %>件のエラーがあります。</p>
+    <p class="ml-3" style="color: red;">※ <%= @review.errors.count %>件のエラーがあります。</p>
   <% end %> 
    
   <%= f.hidden_field :facility_id, { value: @facility.id} %>
