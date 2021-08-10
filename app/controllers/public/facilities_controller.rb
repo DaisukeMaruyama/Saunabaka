@@ -2,7 +2,7 @@ class Public::FacilitiesController < ApplicationController
   
   def index
     @q = Facility.ransack(params[:q])
-    @facilities = @q.result(distinct: :true).order(created_at: :desc)
+    @facilities = @q.result(distinct: :true).order(created_at: :desc).page(params[:page]).per(12)
   end
 
   def show
