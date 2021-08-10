@@ -326,6 +326,7 @@ DEPENDENCIES
   dotenv-rails
   jbuilder (~> 2.7)
   jquery-rails
+  kaminari
   listen (~> 3.2)
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.4)
