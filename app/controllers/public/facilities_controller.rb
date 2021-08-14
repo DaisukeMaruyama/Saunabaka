@@ -14,7 +14,7 @@ class Public::FacilitiesController < ApplicationController
       @average_review = @facility.reviews.average(:rate).round(2)
     end
     
-    @facilities_review = @facility.reviews.order(created_at: :desc)
+    @facilities_review = @facility.reviews.order(created_at: :desc).page(params[:page]).per(8)
 
   end
   
