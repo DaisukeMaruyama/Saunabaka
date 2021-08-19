@@ -1,7 +1,7 @@
 class Public::RecommendationsController < ApplicationController
 
   def index
-    @recommendations = Recommendation.all
+    @recommendations = Recommendation.all.page(params[:page]).per(12)
   end
 
   def show
