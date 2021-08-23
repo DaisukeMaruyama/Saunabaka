@@ -45,7 +45,11 @@
   <div class="container">
 
     <div class="d-flex justify-content-end">
-      <%= link_to '新しいサウナを登録', "facilities/new", class:"btn btn-success" %>
+      <% if user_signed_in? %>
+        <%= link_to '新しいサウナを登録', "facilities/new", class:"btn btn-success" %>
+      <% else %>
+        <p>※ログインをしてサウナ施設情報を入力しよう！</p>
+      <% end %>
     </div>
     <p><%= @facilities.count %>件表示</p>
 
