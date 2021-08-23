@@ -34,6 +34,7 @@ gem 'devise-i18n-views'
 gem "dotenv-rails"
 gem "rails_admin"
 gem 'kaminari'
+gem 'data-confirm-modal'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
